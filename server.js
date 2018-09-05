@@ -29,9 +29,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('maintenance.hbs');
-});
 
 app.get('/', (req, res) => {
   // res.send('<h1>Hello Express!</h1>');
@@ -46,6 +43,12 @@ app.get('/about', (req, res) => {
     pageTitle: 'About Page',
   });
 });
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects'
+  });
+})
 
 app.get('/bad', (req, res) => {
   res.send({
